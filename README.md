@@ -1,6 +1,6 @@
 # QBE extension for Zed
 
-This extension provides comprehensive support for the [QBE](https://c9x.me/qbe/) Intermediate Language in the [Zed editor](https://zed.dev).
+This extension provides comprehensive support for the [QBE](https://c9x.me/compile/) Intermediate Language in the [Zed editor](https://zed.dev).
 
 ## Features
 
