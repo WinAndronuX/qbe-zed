@@ -1,0 +1,16 @@
+name = "QBE"
+grammar = "qbe"
+path_suffixes = ["ssa", "qbe"]
+line_comments = ["# "]
+tab_size = 8
+hard_tabs = true
+word_characters = ["$", "%", "@", ":"]
+
+brackets = [
+  { start = "{", end = "}", close = true, newline = true },
+  { start = "(", end = ")", close = true, newline = false },
+  { start = "\"", end = "\"", close = true, newline = false, not_in = ["string", "comment"] }
+]
+
+increase_indent_pattern = "(\\{|@[a-zA-Z._][a-zA-Z0-9$._]*)\\s*$"
+decrease_indent_pattern = "^\\s*\\}"

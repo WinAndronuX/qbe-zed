@@ -1,0 +1,102 @@
+{
+  "Function": {
+    "prefix": "func",
+    "body": [
+      "function ${1:w} \\$${2:name}(${3:}) {",
+      "@start",
+      "\t${0}",
+      "\tret",
+      "}"
+    ],
+    "description": "Define a QBE function"
+  },
+  "Exported Function": {
+    "prefix": "export",
+    "body": [
+      "export function ${1:w} \\$${2:main}(${3:}) {",
+      "@start",
+      "\t${0}",
+      "\tret 0",
+      "}"
+    ],
+    "description": "Define an exported QBE function"
+  },
+  "Data Definition": {
+    "prefix": "data",
+    "body": [
+      "data \\$${1:name} = { ${2:b} \"${3:hello}\\n\", b 0 }"
+    ],
+    "description": "Define static data"
+  },
+  "Type Definition": {
+    "prefix": "type",
+    "body": [
+      "type :${1:name} = { ${2:w} }"
+    ],
+    "description": "Define an aggregate type"
+  },
+  "Block Label": {
+    "prefix": "label",
+    "body": [
+      "@${1:label}",
+      "\t${0}"
+    ],
+    "description": "Block label"
+  },
+  "Phi Instruction": {
+    "prefix": "phi",
+    "body": [
+      "%${1:res} =${2:w} phi @${3:lbl1} ${4:val1}, @${5:lbl2} ${6:val2}"
+    ],
+    "description": "Phi instruction"
+  },
+  "Call Instruction": {
+    "prefix": "call",
+    "body": [
+      "%${1:res} =${2:w} call \\$${3:target}(${4:})"
+    ],
+    "description": "Call a function"
+  },
+  "Alloc Instruction": {
+    "prefix": "alloc",
+    "body": [
+      "%${1:ptr} =l alloc${2|4,8,16|} ${3:size}"
+    ],
+    "description": "Stack allocation"
+  },
+  "Load Instruction": {
+    "prefix": "load",
+    "body": [
+      "%${1:val} =${2:w} load${3|w,l,s,d,sb,ub,sh,uh|} %${4:ptr}"
+    ],
+    "description": "Load from memory"
+  },
+  "Store Instruction": {
+    "prefix": "store",
+    "body": [
+      "store${1|w,l,s,d,b,h|} %${2:val}, %${3:ptr}"
+    ],
+    "description": "Store to memory"
+  },
+  "Conditional Jump": {
+    "prefix": "jnz",
+    "body": [
+      "jnz %${1:cond}, @${2:if_true}, @${3:if_false}"
+    ],
+    "description": "Conditional jump"
+  },
+  "Jump": {
+    "prefix": "jmp",
+    "body": [
+      "jmp @${1:target}"
+    ],
+    "description": "Unconditional jump"
+  },
+  "Return": {
+    "prefix": "ret",
+    "body": [
+      "ret ${1:%val}"
+    ],
+    "description": "Return from function"
+  }
+}

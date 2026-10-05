@@ -1,0 +1,11 @@
+id = "qbe"
+name = "QBE"
+version = "0.0.1"
+schema_version = 1
+authors = ["WinAndronuX"]
+description = "QBE Intermediate Language support for Zed (Syntax Highlighting, Outline, Indents, Snippets)"
+repository = "https://github.com/WinAndronuX/qbe-zed"
+
+[grammars.qbe]
+repository = "https://github.com/WinAndronuX/tree-sitter-qbe"
+commit = "main"
